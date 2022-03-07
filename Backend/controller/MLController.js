@@ -1,6 +1,8 @@
 const tfnode = require("@tensorflow/tfjs-node");
 const tf = require("@tensorflow/tfjs");
 const fs = require("fs");
+const jimp = require("jimp");
+const { cos } = require("@tensorflow/tfjs");
 
 function processImage(path) {
   const imageSize = 300;
@@ -12,13 +14,55 @@ function processImage(path) {
   // resize the image
   image = tf.image.resizeBilinear(image, (size = [imageSize, imageSize])); // can also use tf.image.resizeNearestNeighbor
   image = image.expandDims(); // to add the most left axis of size 1
-  console.log(image.shape);
-  return image.shape; // shape (1,300,300,4) rehna chahiye
+
+  return image; // shape (1,300,300,4) rehna chahiye
 }
 
-exports.predict = (req, res) => {
-  const data = processImage(req.file.path);
+exports.predict = async (req, res) => {
+  const newName = "tempImage.png";
+  let imagePath = "./public/images/" + newName;
+  console.log(res.file);
+  jimp
+    .read(`./${req.file.path}`)
+    .then((lenna) => {
+      return lenna.write(imagePath); // save
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  console.log("hello");
+
+  const model = await tf.loadLayersModel(
+    "http://localhost:8888/public/MLModel/model.json"
+  );
+
+  const data = processImage(imagePath);
+
+  // const imageTensor = tf.browser.fromPixels(data);
+  const prediction = model.predict(data);
+
+  const tensorArr = prediction.arraySync()[0];
+  console.log(tensorArr);
+  const maxMatchIdx = tensorArr.indexOf(Math.max(...tensorArr));
+  // console.log({ index: maxMatch });
+  const labels = [
+    "Bangus",
+    "Barramundi",
+    "Indian Anchovy",
+    "Indian Mackerel",
+    "Indian Salmon",
+    "Katla Fish",
+    "Mahseer-tor tor",
+    "Mangrove Red Snapper",
+    "Pomfret",
+    "Rohu",
+    "Tarali",
+    "Tuna Fish",
+  ];
+
   res.status(200).json({
-    data: req.file,
+    data: {
+      name: labels[maxMatchIdx],
+    },
   });
 };
