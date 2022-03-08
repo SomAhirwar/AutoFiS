@@ -11,6 +11,9 @@ import {
   Button,
   Typography,
 } from "@mui/material";
+import Temp from "../Temp/Temp";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -18,13 +21,18 @@ const useStyle = makeStyles((theme) => {
       marginTop: "20px !important",
       width: "100%",
     },
+    heading: {
+      marginButtom: "30px !important",
+    },
   };
 });
 
 function Predict() {
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState("");
+  const [changed, setChanged] = useState(false);
   const classes = useStyle();
+  const history = useHistory();
 
   const imageRef = useRef();
 
@@ -45,18 +53,23 @@ function Predict() {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        marginTop="12%"
+        marginTop="75px"
       >
         <Grid item>
-          <h1 style={{ textAlign: "center", marginBottom: "1.5em" }}>
+          <Typography variant="h3" className={classes.heading}>
             Upload Your Fish to Know Your Fish
-          </h1>
+          </Typography>
           <DropzoneArea
             acceptedFiles={["image/*"]}
             dropzoneText={"Add an image"}
             onChange={(ev) => {
-              console.log(ev);
               setImage(ev[0]);
+              console.log(ev.length > 0);
+              // if (ev.length > 0)
+              //   history.push({
+              //     pathname: "/predict",
+              //     state: { image: ev[0] },
+              //   });
             }}
             maxFileSize={10000000}
             filesLimit={1}
