@@ -7,7 +7,6 @@ const useStyle = makeStyles((theme) => {
   return {
     root: {
       width: "65%",
-      marginTop: "30px",
       "& > *": {
         marginBottom: "10px",
         padding: "5px",

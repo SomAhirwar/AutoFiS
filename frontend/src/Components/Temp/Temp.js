@@ -27,7 +27,11 @@ function Temp(props) {
 
     submitImage();
   }, []);
-  console.log({ test: fishes[fishObjName] });
+
+  console.log(fishNutrition);
+  console.log({
+    test: setFishObjName[prediction.replace(/\s|-/g, "_").toUpperCase()],
+  });
   return (
     <div>
       <Typography variant="h2">{prediction}</Typography>
@@ -57,9 +61,15 @@ function Temp(props) {
       </Typography>
       <Typography variant="h4">Predicted Fish: {prediction}</Typography>
       <Typography variant="h4">Confidence: {confidence}%</Typography>
+      <h2 style={{ fontSize: "30px", margin: "30px 0 20px 0" }}>Information</h2>
       <Table
         prediction={prediction.replace(/\s|-/g, "_").toUpperCase()}
         obj={fishes[prediction.replace(/\s|-/g, "_").toUpperCase()]}
+      />
+      <h2 style={{ fontSize: "30px", margin: "30px 0 20px 0" }}>Nutritions</h2>
+      <Table
+        prediction={prediction.replace(/\s|-/g, "_").toUpperCase()}
+        obj={fishNutrition[prediction.replace(/\s|-/g, "_").toUpperCase()]}
       />
     </div>
   );
