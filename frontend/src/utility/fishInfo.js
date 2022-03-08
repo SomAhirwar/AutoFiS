@@ -217,4 +217,4 @@ const fishNutrition = {
     Potassium: "5%",
   },
 };
-export default { fishes, fishNutrition };
+export { fishes, fishNutrition };
