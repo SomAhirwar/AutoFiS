@@ -80,10 +80,9 @@ function Predict() {
               style={{ width: "100%" }}
               to={{ pathname: "/predict", state: { image: image } }}
             >
-              To
+              Predict
             </Link>
           </Button>
-          <Typography variant="h4">Predicted Fish: {prediction}</Typography>
         </Grid>
       </Grid>
     </Fragment>
