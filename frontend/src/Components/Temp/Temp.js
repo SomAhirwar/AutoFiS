@@ -4,12 +4,15 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { fishes, fishNutrition } from "../../utility/fishInfo";
 import Table from "../Table/Table";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 
 function Temp(props) {
   const [imageURL, setimageURL] = useState("");
   const [prediction, setPrediction] = useState("");
   const [confidence, setConfidence] = useState("");
   const [fishObjName, setFishObjName] = useState("");
+  const [toggleValue, setToggleValue] = useState("fisherman");
   const location = useLocation();
   const image = location?.state?.image;
   useEffect(() => {
@@ -71,6 +74,18 @@ function Temp(props) {
         prediction={prediction.replace(/\s|-/g, "_").toUpperCase()}
         obj={fishNutrition[prediction.replace(/\s|-/g, "_").toUpperCase()]}
       />
+      <ToggleButtonGroup
+        value={toggleValue}
+        exclusive
+        onChange={(event, newAlignment) => setToggleValue(newAlignment)}
+        aria-label="text alignment"
+      >
+        <ToggleButton
+          value="fisherman"
+          aria-label="left aligned"
+        ></ToggleButton>
+        <ToggleButton value="consumer" aria-label="centered"></ToggleButton>
+      </ToggleButtonGroup>
     </div>
   );
 }

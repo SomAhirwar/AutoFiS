@@ -9,7 +9,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Seven stages in the life history of milkfish Chanos chanos are suggested: embryonic, yolksac larval, larval, postlarval, juvenile, sub-adult and adult stages. These were based on morphological differences and on their particular ecological requirements.Mating behavior -Spawning and fertilization take place at night.",
     Location_on_Map: "Bangus.jpg",
-    endergered: true,
+    endangered: true,
   },
   BARRAMUNDI: {
     Scientific_Name: "Lates calcarifer",
@@ -21,7 +21,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Breed in estuaries throughout the Indo-Pacific. Maturing male barramundi migrate downstream from freshwater habitats at the start of the wet (monsoon) season to spawn with resident females in estuaries  and on tidal flats outside the mouths of rivers . Barramundi spawn on the full moon and new moon, primarily at the beginning of an incoming tide which carries the eggs into the estuary Barramundi are broadcast spawners that aggregate to spawn .",
     Location_on_Map: "Barramundi.jpg",
-    endergered: false,
+    endangered: false,
   },
   INDIAN_ANCHOVY: {
     Scientific_Name: "Stolephorus indicus",
@@ -33,7 +33,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "In Manila Bay, migrates out into deeper and more saline water to breed (at about 9 cm SL and above), returning immediately thereafter.",
     Location_on_Map: "Indian_anchovy.jpg",
-    endergered: false,
+    endangered: false,
   },
   INDIAN_MACKREL: {
     Scientific_Name: "Rastrelliger kanagurta",
@@ -45,7 +45,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Currently the Indian Mackerel fish is widespread in the Indo-West Pacific from South Africa, Seychelles and Red Sea east through Indonesia and off northern Australia to Melanesia, Micronesia, Samoa, China and the Ryukyu Islands",
     Location_on_Map: "Indian_Mackrel.jpg",
-    endergered: false,
+    endangered: false,
   },
   TARALI: {
     Scientific_Name: "Sardinella longiceps",
@@ -56,7 +56,7 @@ const fishes = {
       " Coastal pelagic . Forms schools in coastal waters and strongly migratory. Feeds mainly on phytoplankton (especially diatoms) and small crustaceans . Breeds once a year off western coasts of India when temperatures and salinity are low during the southwest monsoon months. Spawning peaks in August-September. Occurs at temperatures of 22.0-28.0 °C (Ref. 3689). Marketed fresh, dried and dried-salted. Also sold smoked and canned . Also made into fish meal and fish balls.",
     Life_cycle_Mating_behavior: "Spawning usually takes place at night",
     Location_on_Map: "Tarali.jpg",
-    endergered: false,
+    endangered: false,
   },
   INDIAN_SALMON: {
     Scientific_Name: "Eleutheronema tetradactylum",
@@ -67,7 +67,7 @@ const fishes = {
       " This species is distinguished with the following characters: second dorsal fin soft rays 14 (rarely 13 or 15) pectoral fin rays 16-18 (mode 17, rarely 15 or 19), pectoral filaments 4; pored lateral line scales 71-80 (mode 73); scale rows above lateral line 9-12, below 13-15 (14); vomer with deciduous tooth plates on both sides, except in juveniles (< ca. 7.0 cm SL); posterior part of maxilla deep, 3-4% of SL; short tooth plate extension onto lateral surface of lower jaw, 7-9% SL. Colour of upper sides of head and trunk with slight darkish silver tinge, becoming lighter in lower sides; anterior margins of first and second dorsal fins blackish, remaining parts translucent and slightly blackish, respectively; pectoral fin membranes vivid yellow in life, except in large specimens > ca 35 cm SL which is dusky yellow; pectoral filaments white; anterior margin of pelvic fin yellow and other parts white; base of caudal",
     Life_cycle_Mating_behavior: "Spawning usually takes place at night",
     Location_on_Map: "Indian_Salmon.jpg",
-    endergered: false,
+    endangered: false,
   },
   KATLA: {
     Scientific_Name: "Catla catla",
@@ -79,7 +79,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Adults occur in rivers, lakes and culture ponds (Ref. 41236). Mature individuals breed in rivers",
     Location_on_Map: "katla.jpg",
-    endergered: false,
+    endangered: false,
   },
   ROHU: {
     Scientific_Name: "Roho labeo",
@@ -91,7 +91,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Spawns in middle reaches of rivers, where flood water spreads in more or less limpid shallows over fertile flats, well above tidal reaches; also in reservoirs and bundh-type tanks.",
     Location_on_Map: "Rohu.jpg",
-    endergered: false,
+    endangered: false,
   },
   TUNA: {
     Scientific_Name: " Thunnini",
@@ -103,7 +103,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Spawns in middle reaches of rivers, where flood water spreads in more or less limpid shallows over fertile flats, well above tidal reaches; also in reservoirs and bundh-type tanks.",
     Location_on_Map: "tuna.jpg",
-    endergered: false,
+    endangered: false,
   },
   POMFRET: {
     Scientific_Name: " Bramidae",
@@ -115,7 +115,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Spawns in middle reaches of rivers, where flood water spreads in more or less limpid shallows over fertile flats, well above tidal reaches; also in reservoirs and bundh-type tanks.",
     Location_on_Map: "pomfret.jpg",
-    endergered: false,
+    endangered: false,
   },
   MAHSEER_TOR_TOR: {
     Scientific_Name: " Bramidae",
@@ -127,7 +127,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Spawns in middle reaches of rivers, where flood water spreads in more or less limpid shallows over fertile flats, well above tidal reaches; also in reservoirs and bundh-type tanks.",
     Location_on_Map: "mahseer.jpg",
-    endergered: false,
+    endangered: false,
   },
   MANGROVE_RED_SNAPPER: {
     Scientific_Name: " Bramidae",
@@ -139,7 +139,7 @@ const fishes = {
     Life_cycle_Mating_behavior:
       "Spawns in middle reaches of rivers, where flood water spreads in more or less limpid shallows over fertile flats, well above tidal reaches; also in reservoirs and bundh-type tanks.",
     Location_on_Map: "mangroove.jpg",
-    endergered: false,
+    endangered: false,
   },
 };
 
