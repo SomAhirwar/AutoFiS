@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import Temp from "../Temp/Temp";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => {
@@ -23,6 +23,10 @@ const useStyle = makeStyles((theme) => {
     },
     heading: {
       marginButtom: "30px !important",
+    },
+    link: {
+      color: "white",
+      textDecoration: "none",
     },
   };
 });
@@ -65,22 +69,19 @@ function Predict() {
             onChange={(ev) => {
               setImage(ev[0]);
               console.log(ev.length > 0);
-              // if (ev.length > 0)
-              //   history.push({
-              //     pathname: "/predict",
-              //     state: { image: ev[0] },
-              //   });
             }}
             maxFileSize={10000000}
             filesLimit={1}
             showAlerts={["error"]}
           />
-          <Button
-            className={classes.button}
-            variant="contained"
-            onClick={submitImage}
-          >
-            Predict
+          <Button className={classes.button} variant="contained">
+            <Link
+              className={classes.link}
+              style={{ width: "100%" }}
+              to={{ pathname: "/predict", state: { image: image } }}
+            >
+              To
+            </Link>
           </Button>
           <Typography variant="h4">Predicted Fish: {prediction}</Typography>
         </Grid>

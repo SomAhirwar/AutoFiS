@@ -45,6 +45,10 @@ exports.predict = async (req, res) => {
   console.log(tensorArr);
   const maxMatchIdx = tensorArr.indexOf(Math.max(...tensorArr));
   // console.log({ index: maxMatch });
+  const confidence =
+    (tensorArr[maxMatchIdx] * 100) /
+    tensorArr.reduce((partialSum, a) => partialSum + a, 0);
+  console.log(confidence.toFixed(2));
   const labels = [
     "Bangus",
     "Barramundi",
@@ -63,6 +67,7 @@ exports.predict = async (req, res) => {
   res.status(200).json({
     data: {
       name: labels[maxMatchIdx],
+      confidence: confidence.toFixed(2),
     },
   });
 };
